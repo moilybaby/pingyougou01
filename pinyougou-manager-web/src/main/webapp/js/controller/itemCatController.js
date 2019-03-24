@@ -75,5 +75,12 @@ app.controller('itemCatController' ,function($scope,$controller   ,itemCatServic
 			}			
 		);
 	}
-    
+	//根据上级分类Id查询
+    $scope.findByParentId=function (parentId) {
+		itemCatService.findByParentId(parentId).success(
+			function (response) {
+				$scope.list=response;
+            }
+		)
+    }
 });	

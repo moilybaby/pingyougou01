@@ -30,7 +30,7 @@ app.service('itemCatService',function($http){
 		return $http.post('../itemCat/search.do?page='+page+"&rows="+rows, searchEntity);
 	}
     //查询
-    this.findPageById=function(page,rows){
-        return $http.get('../itemCat/findPage.do?page='+page+'&rows='+rows);
+    this.findByParentId=function(parentId){
+        return $http.get('../itemCat/findByParentId.do?parentId='+parentId);
     }
 });
